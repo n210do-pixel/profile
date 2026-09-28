@@ -3,7 +3,7 @@ function delayScrollAnime() {
 	var value = time;
 	$('.delayScroll').each(function () {
 		var parent = this;					//親要素を取得
-		var elemPos = $(this).offset().top+50;//要素の位置まで来たら
+		var elemPos = $(this).offset().top;//要素の位置まで来たら
 		var scroll = $(window).scrollTop();//スクロール値を取得
 		var windowHeight = $(window).height();//画面の高さを取得
 		var childs = $(this).children();	//子要素を取得
@@ -34,3 +34,7 @@ function delayScrollAnime() {
 		delayScrollAnime();/* アニメーション用の関数を呼ぶ*/
 	});// ここまで画面をスクロールをしたら動かしたい場合の記述
 
+// 画面が読み込まれたらすぐに動かしたい場合の記述
+	$(window).on('load', function(){
+		delayScrollAnime();/* アニメーション用の関数を呼ぶ*/
+	});// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
